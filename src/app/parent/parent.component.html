@@ -2,7 +2,10 @@
     <h3>Parent Component</h3>
     <p>parent works!!</p>
 
-    <button (click)="click()">Test</button>
+    <button (click)="handleSelection('color')">Color</button>
+    <button (click)="handleSelection('animal')">Animal</button>
+    
+    <p *ngIf="selected">The selected value is {{selected}}</p>
 
-    <app-child [str]="str1"></app-child>
+    <app-child [keyValue]="keyMsg" (sendMsg)="hanldeChildMsg($event)"></app-child>
 </div>

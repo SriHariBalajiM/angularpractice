@@ -1,10 +1,11 @@
 import { Component, DoCheck, inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { TestService } from '../test.service';
 import { ChildComponent } from '../child/child.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-parent',
-  imports: [ChildComponent],
+  imports: [ChildComponent,NgIf],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss',
   providers:[TestService],
@@ -16,6 +17,9 @@ export class ParentComponent implements OnInit,DoCheck {
      title = 'angularpractice';
   name:string='';
 str1:string[]=[];
+
+keyMsg:string='';
+selected:string='';
   ngOnInit(): void {
     this.name=this.testService.name;
   }
@@ -27,5 +31,13 @@ str1:string[]=[];
 click(){
   this.str1.push('Parent component');
   console.log(this.str1);
+}
+
+handleSelection(key:string){
+  this.keyMsg=key;
+}
+
+hanldeChildMsg(e:any){
+this.selected=e;
 }
 }
