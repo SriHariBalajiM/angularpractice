@@ -3,7 +3,7 @@
     <p>Child works!!</p>
         <button (click)="click()">Test</button>
 
-        <div *ngFor="let random of filteredObj">
+        <div *ngFor="let random of filteredObj()">
           <button (click)="sendMsgToParent(random.val)"> {{random.val}}</button> 
         </div>
 </div>
