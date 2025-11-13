@@ -20,13 +20,11 @@ export class AppComponent implements OnInit, DoCheck {
   name:string='';
 
 changeName(){
-  console.log('getting called');
 this.testService.name='Ananth';
 this.name=this.testService.name;
 }
 
 ngDoCheck(): void {
-  console.log('App component gets called');
 }
 
 click(){}

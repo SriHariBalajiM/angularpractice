@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input, model } from '@angular/core';
 
 @Component({
-  selector: 'sri-parent1',
+  selector: 'app-parent1',
   imports: [],
   templateUrl: './parent1.component.html',
   styleUrl: './parent1.component.scss'
 })
 export class Parent1Component {
+value=model();
 
+toggle(){
+  this.value.update(val=>!val);
+}
 }

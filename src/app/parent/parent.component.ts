@@ -2,10 +2,11 @@ import { Component, DoCheck, inject, OnInit, ViewEncapsulation } from '@angular/
 import { TestService } from '../test.service';
 import { ChildComponent } from '../child/child.component';
 import { NgIf } from '@angular/common';
+import { Parent1Component } from './parent1/parent1.component';
 
 @Component({
   selector: 'app-parent',
-  imports: [ChildComponent,NgIf],
+  imports: [ChildComponent,NgIf,Parent1Component],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss',
   providers:[TestService],
@@ -20,17 +21,16 @@ str1:string[]=[];
 
 keyMsg:string='';
 selected:string='';
+val:boolean=false;
   ngOnInit(): void {
     this.name=this.testService.name;
   }
 
   ngDoCheck(): void {
-  console.log('Parent component gets called');
 }
 
 click(){
   this.str1.push('Parent component');
-  console.log(this.str1);
 }
 
 handleSelection(key:string){
@@ -39,5 +39,9 @@ handleSelection(key:string){
 
 hanldeChildMsg(e:any){
 this.selected=e;
+}
+
+toggle(){
+this.val=true;
 }
 }

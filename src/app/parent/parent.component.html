@@ -9,3 +9,6 @@
 
     <app-child [keyValue]="keyMsg" (sendMsg)="hanldeChildMsg($event)"></app-child>
 </div>
+<app-parent1 [(value)]="val"></app-parent1> 
+<button (click)="toggle()">Toggle</button>
+<p *ngIf="val">Checkbox is selected!!</p>
