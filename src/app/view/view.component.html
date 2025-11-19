@@ -1,9 +1,11 @@
-<p #highlight>view child concept works!</p>
-<p #highlight> View Children concept works</p>
 <p #highlight>View Children concept works</p>
+<p #highlight>View Children concept works</p>
+<p #highlight>View Children concept works</p>
+<p #result>{{totalListedPTags()}}</p>
+
 <button (click)="increment()">++</button>
 <button (click)="decrement()">--</button>
-<p>{{viewTestChild ? viewTestChild.counter : 0}}</p>
+<p>{{viewTestChildSignal() ? viewTestChildSignal()?.counter : 0}}</p>
 
 <app-view-test #viewTest></app-view-test>
 

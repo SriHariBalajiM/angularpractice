@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, viewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, computed, effect, ElementRef, OnInit, QueryList, ViewChild, viewChild, viewChildren, ViewChildren } from '@angular/core';
 import { ViewTestComponent } from '../view-test/view-test.component';
 
 @Component({
@@ -7,21 +7,27 @@ import { ViewTestComponent } from '../view-test/view-test.component';
   templateUrl: './view.component.html',
   styleUrl: './view.component.scss'
 })
-export class ViewComponent implements AfterViewInit {
-    @ViewChildren('highlight')highlight!:QueryList<ElementRef>;
-@ViewChild(ViewTestComponent) viewTestChild: ViewTestComponent | undefined;
+export class ViewComponent  {
+viewTestChildSignal=viewChild<ViewTestComponent>(ViewTestComponent);
+result=viewChild<ElementRef>('result');
 
+highlight=viewChildren<ElementRef>('highlight');
 
-ngAfterViewInit(): void {
-      this.highlight.forEach((ele,index)=>{
-        ele.nativeElement.innerText=index;
-      })
+totalListedPTags=computed(()=>this.highlight().length);
+constructor(){
+  effect(() => {
+  const res=this.result();
+  if(res){
+res.nativeElement.innerText=`Result of total <p> Tags are ${this.totalListedPTags()}`;
+  }
+  }
+  )
 }
 
 increment(){
-  this.viewTestChild?.inc();
+  this.viewTestChildSignal()?.inc();
 }
 decrement(){
-    this.viewTestChild?.dec();
+    this.viewTestChildSignal()?.dec();
 }
 }
