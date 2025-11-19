@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { TestService } from './test.service';
+import { ViewComponent } from './view/view.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,ParentComponent],
+  imports: [RouterOutlet,ViewComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
