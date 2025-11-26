@@ -7,7 +7,7 @@ import { ViewComponent } from './view/view.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,ViewComponent],
+  imports: [RouterOutlet,ParentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
