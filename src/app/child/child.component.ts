@@ -8,7 +8,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   styleUrl: './child.component.scss',
   encapsulation:ViewEncapsulation.None,
 })
-export class ChildComponent implements OnInit,OnDestroy,OnChanges,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked {
+export class ChildComponent implements OnInit,OnDestroy,OnChanges,DoCheck,AfterContentInit,AfterViewInit {
 
   @Input()
   str:string[]=[];
@@ -36,10 +36,10 @@ export class ChildComponent implements OnInit,OnDestroy,OnChanges,DoCheck,AfterC
   ngOnInit(): void {
     // this.filteredObj=[...this.randomObj];
     console.log('child component ngOnInit gets called...');
-  //  this.interval= setInterval(()=>{
-  //   this.counter=this.counter+1;
-  //   console.log(this.counter);
-  //   },1000);
+   this.interval= setInterval(()=>{
+    this.counter=this.counter+1;
+    console.log(this.counter);
+    },1000);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -66,18 +66,18 @@ ngAfterContentInit(): void {
   console.log('ngAfterContentInIt gets called',this.content);
 }
 
-ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked gets called',this.content)
-    this.content.nativeElement.innerText=`${this.name}`;
-}
+// ngAfterContentChecked(): void {
+//     console.log('ngAfterContentChecked gets called',this.content)
+//     this.content.nativeElement.innerText=`${this.name}`;
+// }
 
 ngAfterViewInit(): void {
   console.log('view in it lifecycle hook gets called',this.child);
 }
 
-ngAfterViewChecked(): void {
-        this.child.nativeElement.innerText=`${this.name}`;
-}
+// ngAfterViewChecked(): void {
+//         this.child.nativeElement.innerText=`${this.name}`;
+// }
 ngOnDestroy(): void {
   console.log('Child component ngOnDestroy gets called');
   clearInterval(this.interval);

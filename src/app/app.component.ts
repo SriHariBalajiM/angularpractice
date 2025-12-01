@@ -4,10 +4,11 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { TestService } from './test.service';
 import { ViewComponent } from './view/view.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,ParentComponent],
+  imports: [RouterOutlet,DataBindingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

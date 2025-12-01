@@ -1,0 +1,7 @@
+<p>data-binding works!</p>
+
+<input type="text" [disabled]="toggle"  [(ngModel)]="testData" />
+
+<input type="checkbox"  (input)="toggleFunc()"/>
+
+<p>Submitted Response:{{testData}}</p>
