@@ -1,10 +1,10 @@
-import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-structural-directive',
-  imports: [NgIf,NgFor,FormsModule,NgSwitch,NgSwitchCase,NgSwitchDefault],
+  imports: [NgIf,NgFor,FormsModule,NgSwitch,NgSwitchCase,NgSwitchDefault,NgClass,NgStyle],
   templateUrl: './structural-directive.component.html',
   styleUrl: './structural-directive.component.scss'
 })
