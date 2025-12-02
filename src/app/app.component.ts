@@ -5,10 +5,11 @@ import { ChildComponent } from './child/child.component';
 import { TestService } from './test.service';
 import { ViewComponent } from './view/view.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { StructuralDirectiveComponent } from './structural-directive/structural-directive.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,DataBindingComponent],
+  imports: [RouterOutlet,StructuralDirectiveComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
