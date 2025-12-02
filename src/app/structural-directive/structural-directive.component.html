@@ -16,8 +16,8 @@
 <p>*ngSwitch</p>
 <input type="number" [(ngModel)]="selectedNumber"/>
 <div [ngSwitch]="selectedNumber">
-    <p *ngSwitchCase="1">The selected number is {{selectedNumber}}</p>
-     <p *ngSwitchCase="2">The selected number is {{selectedNumber}}</p>
-      <p *ngSwitchCase="3">The selected number is {{selectedNumber}}</p>
+    <p *ngSwitchCase="1" appHighlight [number]="selectedNumber "  [divisibleBy]="divisibleBy">The selected number is {{selectedNumber}}</p>
+     <p *ngSwitchCase="2" appHighlight [number]="selectedNumber "  [divisibleBy]="divisibleBy">The selected number is {{selectedNumber}}</p>
+      <p *ngSwitchCase="3" appHighlight [number]="selectedNumber "  [divisibleBy]="divisibleBy">The selected number is {{selectedNumber}}</p>
        <p *ngSwitchDefault>Select a number between 1-3</p>
 </div>
